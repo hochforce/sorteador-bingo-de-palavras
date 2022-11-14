@@ -263,6 +263,9 @@ body {
     padding: 5px 25px;
     width: 80%;
   }
+  #loading span{
+    font-size: .9rem;
+  }
   #container .content a {
     width: 60%;
     font-size: .7rem;
