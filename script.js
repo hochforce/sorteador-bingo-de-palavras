@@ -111,8 +111,11 @@ function mostrarTextoDoBotao() {
 function sortear() {
   document.querySelector('#button').classList.remove("loading-view");
   document.querySelector('#loading').classList.add("loading-view");
-
-  
+  if (!valorSorteado) {
+    valorSorteado = ""
+  } else {
+    document.getElementById("anterior").value = valorSorteado
+  }
   const valor = Math.floor(Math.random() * premios.length);
   valorSorteado = premios[valor]
   if (premiosSorteados.length == premios.length) {
@@ -133,16 +136,10 @@ function sortear() {
       }, 2000);
     }
   }
-
   setTimeout(function () {
     document.querySelector('#button').classList.add("loading-view");
     document.querySelector('#loading').classList.remove("loading-view");
   }, 2001);
-  if (!valorSorteado) {
-    valorSorteado = ""
-  } else {
-    document.getElementById("anterior").value = valorSorteado
-  }
 }
 
 window.onmousemove = function (e) {
